@@ -1,0 +1,128 @@
+:root {
+    --card-bg: #232527;
+    --text-color: #fff;
+}
+/* Roblox puts a class 'light-theme' on the body if light mode is on */
+.light-theme {
+    --card-bg: #ffffff;
+    --text-color: #393b3d;
+}
+.custom-list-select {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+/* =========================================
+   1. HOME PAGE STYLES
+   ========================================= */
+
+/* Use native Roblox font for dropdown */
+.custom-list-select {
+    appearance: none; -webkit-appearance: none;
+    background-color: #232527; 
+    color: white;
+    border: 1px solid #656668; 
+    border-radius: 4px; /* Matches Roblox buttons */
+    padding: 4px 32px 4px 10px;
+    font-family: 'Gotham', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px; 
+    font-weight: 500;
+    cursor: pointer; 
+    outline: none; 
+    height: 30px; /* Slightly smaller to fit header */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat; 
+    background-position: right 10px center; 
+    background-size: 10px;
+}
+.custom-list-select:hover { border-color: white; background-color: #393b3d; }
+
+/* Scrollbar Styling for horizontal scrolling */
+.home-page-games-list::-webkit-scrollbar { height: 8px; }
+.home-page-games-list::-webkit-scrollbar-thumb { background: #656668; border-radius: 4px; }
+.home-page-games-list::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); border-radius: 4px; }
+
+/* Remove button on cards */
+.custom-remove-btn {
+    position: absolute; top: 6px; right: 6px;
+    width: 22px; height: 22px;
+    background: rgba(0,0,0,0.8); 
+    color: #ff4d4d;
+    border: 1px solid rgba(255,255,255,0.3); 
+    border-radius: 50%;
+    display: none; /* Hidden by default */
+    align-items: center; justify-content: center;
+    cursor: pointer; 
+    font-weight: bold; 
+    z-index: 10;
+    font-size: 16px;
+    line-height: 1;
+}
+.list-item:hover .custom-remove-btn { display: flex; }
+.custom-remove-btn:hover { background: #ff4d4d; color: white; border-color: #ff4d4d; }
+
+/* =========================================
+   2. GAME PAGE & MODAL (Keep as is, just ensured formatting)
+   ========================================= */
+.custom-context-btn { display: flex !important; align-items: center; justify-content: center; cursor: pointer; }
+.custom-context-btn svg { pointer-events: none; }
+
+.custom-save-modal {
+    width: 240px !important;
+    background-color: #232527 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5) !important;
+    font-family: 'Gotham', 'Helvetica Neue', Arial, sans-serif !important;
+    color: white !important;
+    display: flex !important; flex-direction: column !important;
+    overflow: hidden !important; z-index: 9999 !important;
+    padding: 0 !important; margin: 0 !important;
+    left: 50% !important; transform: translateX(-50%) !important;
+}
+
+.modal-header {
+    font-size: 16px !important; font-weight: 800 !important; color: #fff !important;
+    padding: 14px 16px !important; border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: #232527 !important; margin: 0 !important; line-height: normal !important;
+}
+
+.modal-list-container {
+    max-height: 200px !important; overflow-y: auto !important;
+    display: flex !important; flex-direction: column !important;
+    list-style: none !important; margin: 0 !important; padding: 0 !important;
+}
+.modal-list-container::-webkit-scrollbar { width: 6px; }
+.modal-list-container::-webkit-scrollbar-track { background: transparent; }
+.modal-list-container::-webkit-scrollbar-thumb { background: #656668; border-radius: 3px; }
+
+.modal-row {
+    display: flex !important; align-items: center !important;
+    padding: 10px 16px !important; cursor: pointer !important;
+    transition: background-color 0.1s !important;
+    font-size: 14px !important; font-weight: 500 !important;
+    color: #bdbebe !important; margin: 0 !important;
+    border: none !important; white-space: nowrap !important;
+}
+.modal-row:hover { background-color: rgba(255, 255, 255, 0.1) !important; color: white !important; }
+.modal-row:has(input:checked) { color: white !important; }
+
+.modal-row input[type="checkbox"] {
+    appearance: none !important; -webkit-appearance: none !important;
+    width: 18px !important; height: 18px !important;
+    border: 2px solid #656668 !important; border-radius: 4px !important;
+    margin: 0 12px 0 0 !important; cursor: pointer !important;
+    background-color: transparent !important; flex-shrink: 0 !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
+}
+.modal-row input[type="checkbox"]:checked { background-color: white !important; border-color: white !important; }
+.modal-row input[type="checkbox"]:checked::after {
+    content: ''; width: 4px; height: 8px;
+    border: solid #232527; border-width: 0 2px 2px 0;
+    transform: rotate(45deg); margin-bottom: 2px;
+}
+
+.new-list-wrapper {
+    padding: 12px 16px !important; border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background-color: #232527 !important; margin: 0 !important;
+}

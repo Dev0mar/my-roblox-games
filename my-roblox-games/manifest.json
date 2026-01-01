@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "My Roblox Games",
+  "version": "1.0",
+  "description": "Create custom lists to save, organize, and manage your favorite Roblox games directly on the home page.",
+  "permissions": ["storage"],
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.roblox.com/home", "https://web.roblox.com/home"],
+      "css": ["styles.css"],
+      "js": ["content_home.js"],
+      "run_at": "document_idle"
+    },
+    {
+		"matches": ["https://www.roblox.com/games/*", "https://web.roblox.com/games/*"],
+		"css": ["styles.css"],
+		"js": ["content_game.js"],
+		"run_at": "document_idle"
+    }
+  ]
+}
