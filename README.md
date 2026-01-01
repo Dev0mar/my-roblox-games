@@ -1,4 +1,4 @@
-# Roblox Save Lists Extension
+# My Roblox Games Extension
 
 A Chrome Extension that allows you to create custom lists to save, organize, and manage your favorite Roblox games directly on the home page.
 
